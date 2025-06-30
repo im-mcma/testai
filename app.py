@@ -5,7 +5,7 @@ from openai import OpenAI
 app = Flask(__name__)
 
 # تنظیمات API
-token = os.environ.get('GITHUB_TOKEN', 'کلید-API-شما')
+token = token = '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'
 endpoint = "https://models.github.ai/inference"
 model_name = "openai/gpt-4o"
 

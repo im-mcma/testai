@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دستیار هوشمند</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="data:,"> <!-- حذف درخواست favicon -->
 </head>
 <body>
     <div class="chat-container">
-        <!-- محتوای چت -->
+        <div class="chat-header">
+            دستیار هوشمند ChatGPT
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- پیام‌ها اینجا نمایش داده می‌شوند -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="پیام خود را بنویسید..." autocomplete="off">
+            <button id="send-button">ارسال</button>
+        </div>
     </div>
     <script src="/static/script.js"></script>
 </body>

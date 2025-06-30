@@ -1,8 +1,13 @@
 services:
   - type: web
     name: chatgpt
-    env: python
+    runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
     autoDeploy: true
+    envVars:
+      - key: chatgpt
+        sync: false  
+      - key: PORT
+        value: "10000"

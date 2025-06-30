@@ -4,8 +4,8 @@ from openai import OpenAI
 
 app = Flask(__name__)
 
-# تنظیمات API
-token = token = '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'
+# تنظیمات API - استفاده از متغیرهای محیطی Render
+token = os.environ.get('chatgpt')
 endpoint = "https://models.github.ai/inference"
 model_name = "openai/gpt-4o"
 
@@ -42,4 +42,4 @@ def chat():
         return jsonify({"reply": f"خطا در پردازش درخواست: {str(e)}"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
